@@ -2,6 +2,12 @@
 
 Este repositório contém a resolução dos exercícios propostos no curso de python 3 gratuito da Udemy (Python 3 na Prática).
 
+Lista de exercícios:
+
+1. Calculadora de Índice de Massa Corporal (IMC). Para executar o programa, digite `python calculadora-imc.py` no terminal.
+
+## Setup
+
 Usei o virtualenv para criar um ambiente isolado para rodar os exercícios e testes.
 
 Comando utilizado para criar o ambiente no projeto:

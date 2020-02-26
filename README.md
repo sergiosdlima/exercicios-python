@@ -6,6 +6,8 @@ Lista de exercícios:
 
 1. Calculadora de Índice de Massa Corporal (IMC). Para executar o programa, digite `python calculadora-imc.py` no terminal.
 
+2. Formata o nome das pessoas com todas as iniciais maiúsculas (nome, sobrenome, nome do meio com exceção do “de” ou “da”) ex.: José da Silva.
+
 ## Setup
 
 Usei o virtualenv para criar um ambiente isolado para rodar os exercícios e testes.

@@ -1,29 +1,31 @@
-def formata_nome_completo(nome_completo):
-    lista_nomes = nome_completo.split()
-    for i, nome in enumerate(lista_nomes):
-        if nome != 'de' and nome != 'da':
-            lista_nomes[i] = nome.capitalize()
+def formata_nome(nome_completo):
+    lista_nome_capitalizado = [nome.capitalize() for nome in nome_completo.split()]
+    nome_formatado = ' '.join(lista_nome_capitalizado)
+    nome_formatado = nome_formatado.replace(' Da ', ' da ').replace(' De ', ' de ')
+    return nome_formatado
 
-    return ' '.join(lista_nomes)
 
 class TestCase:
     def test_nome_simples(self):
-        assert formata_nome_completo('marina') == 'Marina'
+        assert formata_nome('marina') == 'Marina'
 
     def test_nome_sobrenome_simples(self):
-        assert formata_nome_completo('marina matos') == 'Marina Matos'
+        assert formata_nome('marina matos') == 'Marina Matos'
 
     def test_sobrenome_com_de(self):
-        assert formata_nome_completo('marina de matos') == 'Marina de Matos'
+        assert formata_nome('marina de matos') == 'Marina de Matos'
 
     def test_sobrenome_com_da(self):
-        assert formata_nome_completo('paulo da silva') == 'Paulo da Silva'
+        assert formata_nome('paulo da silva') == 'Paulo da Silva'
 
     def test_nome_com_acento_sobrenome_com_da(self):
-        assert formata_nome_completo('áida da silva') == 'Áida da Silva'
+        assert formata_nome('áida da silva') == 'Áida da Silva'
 
     def test_nome_completo(self):
-        assert formata_nome_completo('sérgio santana de lima') == 'Sérgio Santana de Lima'
+        assert formata_nome('sérgio santana de lima') == 'Sérgio Santana de Lima'
+
+    def test_nome_sobrenome_caixa_alta(self):
+        assert formata_nome('SÉRGIO SANTANA DE LIMA') == 'Sérgio Santana de Lima'
 
     def test_nome_vazio(self):
-        assert formata_nome_completo('') == ''
+        assert formata_nome('') == ''
